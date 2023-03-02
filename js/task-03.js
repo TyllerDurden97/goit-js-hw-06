@@ -15,29 +15,6 @@ const images = [
 
 //Варіант 1.-------------------------------------------
 
-// const galery = document.querySelector('.gallery');
-
-// const galeryItem = images.map(element => {
-//    const listItem = document.createElement('li');
-
-//    const itemImg = document.createElement('img');
-//    itemImg.url = `${element.url}`;
-//    itemImg.alt = `${element.alt}`;
-//    listItem.style.listStyleType = 'none';
-
-//    listItem.append(itemImg);
-//    // console.log(listItem);
-//    return listItem;   
-// })
-
-// // console.log(galeryItem);
-   
-// galery.append(...galeryItem);
-// console.log(galery);
-
-
-//Варіант 2.-------------------------------------------
-
 const galeryList = document.querySelector('.gallery');
 
 const makeGalery = ({ url, alt }) =>
@@ -49,26 +26,31 @@ const makeGalery = ({ url, alt }) =>
    >
    </li>`;
 
-
 const galeryMarkup = images.map((picture) =>
-   makeGalery(picture)).join("").style.listStyleType = 'none';
+   makeGalery(picture)).join("");
+
+galeryList.insertAdjacentHTML('afterBegin', galeryMarkup);
 
 
-// console.log(galeryMarkup);
+//Варіант 2.-------------------------------------------
 
-galeryList.insertAdjacentHTML('beforeBegin', galeryMarkup);
+// const galery = document.querySelector('.gallery');
 
-// const galeryItemNoMarker = document.querySelector('.list-item');
-// galeryItemNoMarker.map(el => el.style.listStyleType = 'none'
-// );
+// const galeryItem = images.map(element => {
+//    const listItem = document.createElement('li');
 
-// console.log(galeryItemNoMarker);
+//    const itemImg = document.createElement('img');
+//    itemImg.src = `${element.url}`;
+//    itemImg.alt = `${element.alt}`;
+//    listItem.style.listStyleType = 'none';
+//    listItem.classList = "list-item";
 
+//    listItem.append(itemImg);
+//    // console.log(listItem);
+//    return listItem;   
+// })
 
-
-// Використовуй масив об'єктів images для створення елементів <img>, 
-// вкладених в < li >.Для створення розмітки використовуй шаблонні рядки 
-// і метод insertAdjacentHTML().
-
-// Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
-// Додай мінімальне оформлення галереї флексбоксами або грідами через CSS класи.
+// // console.log(galeryItem);
+   
+// galery.append(...galeryItem);
+// console.log(galery);

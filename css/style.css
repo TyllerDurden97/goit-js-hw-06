@@ -1,0 +1,14 @@
+.gallery {
+  list-style: none;
+  display: flex;
+  max-width: 100%;
+  height: auto;
+  flex-direction: column;
+  gap: 20px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
