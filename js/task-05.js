@@ -7,6 +7,9 @@ inputRef.addEventListener('input', typeTextGreet);
 
 
 function typeTextGreet(event) {
-   titleSpanRef.textContent = event.currentTarget.value;
+   if (!event.currentTarget.value) {
+      titleSpanRef.textContent = 'Anonymous';
+   } else { titleSpanRef.textContent = event.currentTarget.value; }
+
 }
 
